@@ -1,4 +1,4 @@
-FROM 1masc/sumo-docker
+FROM socialcars/sumo-docker
 
 ENV SUMO_HOME /opt/sumo
 ENV PATH /usr/local/bin:$HOME/.local/bin/:$PATH

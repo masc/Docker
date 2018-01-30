@@ -23,4 +23,7 @@ RUN echo "\$pdf_mode  = 1;\\n\$bibtex_use = 2;\\n\$pdflatex  = 'pdflatex -halt-o
 # --- machine configuration section --------------
 ENV TEXMFHOME /home/circleci/texmf
 ENV PATH /usr/local/texlive/bin/x86_64-linux:/home/circleci/go/bin:$PATH
+RUN sudo /usr/local/texlive/bin/x86_64-linux/tlmgr install latexmk
 RUN sudo /usr/local/texlive/bin/x86_64-linux/tlmgr update --self --all --reinstall-forcibly-removed
+
+RUN latexmk

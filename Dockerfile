@@ -5,9 +5,6 @@ ENV XERCES_VERSION 3.2.0
 ENV PROJ_VERSION 4.9.3
 ENV SUMO_HOME /opt/sumo
 
-ENV PATH /usr/local/bin:/home/circleci/go/bin:$PATH
-ENV GOPATH /home/circleci/go
-
 # Install dependencies
 RUN apk -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache add \
      python \

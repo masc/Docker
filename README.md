@@ -21,7 +21,7 @@ For example, if you have your SUMO files stored in the folder ```/some/local/pat
 
 This command illustrates this:
 ```
-docker run --rm -t -i -p 1234:1234 -v /some/local/path/to/your/data:/data socialcars/sumo-docker
+docker run --rm -t -i -p 1234:1234 -v /some/local/path/to/your/data:/data socialcars/docker:sumo
 ```
 
 ### Run with CircleCI and Automate Simulation Runs

@@ -52,7 +52,7 @@ WORKDIR $SUMO_HOME
 RUN make -f Makefile.cvs \
 && ./configure \
 && make -j$(nproc) \
-&& make install \
+&& make install clean \
 && sumo
 
 # Add volume to allow for host data to be used

@@ -2,7 +2,7 @@ FROM alpine:edge
 
 ENV SUMO_VERSION 0_32_0
 ENV XERCES_VERSION 3.2.1
-ENV PROJ_VERSION 4.9.3
+ENV PROJ_VERSION 5.0.0
 ENV SUMO_HOME /opt/sumo
 
 # Install dependencies

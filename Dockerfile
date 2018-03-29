@@ -4,7 +4,7 @@ WORKDIR /root
 
 # install TeXLive distribution for documentation (small) (see for ref: https://github.com/LightJason/Docker/blob/tex/Dockerfile)
 # --- configuration section ----------------------
-ENV GLIBC_VERSION 2.26-r0
+ENV GLIBC_VERSION 2.27-r0
 ENV TEX_SCHEME small
 
 # --- TeX and apk package dependencies / installation section --------
@@ -15,7 +15,7 @@ RUN wget -O /tmp/glibc-i18n.apk https://github.com/sgerrand/alpine-pkg-glibc/rel
 
 RUN apk --no-cache update &&\
     apk --no-cache upgrade &&\
-    apk -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache add ca-certificates curl wget git openssh-client gnupg perl go python3-dev freetype-dev libpng-dev hdf5-dev libxml2-dev libxml++-dev libxml++-2.6-dev py3-lxml go curl graphviz /tmp/glibc.apk /tmp/glibc-bin.apk /tmp/glibc-i18n.apk musl-dev ttf-mononoki
+    apk -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache add ca-certificates curl wget git openssh-client gnupg perl go python3-dev freetype-dev libpng-dev hdf5-dev libxml2-dev libxslt-dev libxml++-dev libxml++-2.6-dev py3-lxml go curl graphviz /tmp/glibc.apk /tmp/glibc-bin.apk /tmp/glibc-i18n.apk musl-dev ttf-mononoki
 
 RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8
 

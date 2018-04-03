@@ -8,6 +8,11 @@ This uses an automated build on Dockerhub: https://hub.docker.com/r/socialcars/d
 
 * [socialcars/docker:sumo](https://github.com/SocialCars/Docker/tree/sumo)
 * [socialcars/docker:colmto](https://github.com/SocialCars/Docker/tree/colmto)
+* [socialcars/docker:texlive-full](https://github.com/SocialCars/Docker/tree/texlive-full])
+* [socialcars/docker:texlive-medium](https://github.com/SocialCars/Docker/tree/texlive-medium)
+* [socialcars/docker:texlive-small](https://github.com/SocialCars/Docker/tree/texlive-small)
+* [socialcars/docker:texlive-basic](https://github.com/SocialCars/Docker/tree/texlive-basic)
+* [socialcars/docker:texlive-minimal](https://github.com/SocialCars/Docker/tree/texlive-minimal)
 
 ## socialcars/docker:sumo
 

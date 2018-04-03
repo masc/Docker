@@ -10,7 +10,7 @@ RUN apk -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache
      python \
      python-dev \
      py-pip \
-     build-base \
+     build-base \	
      python3 \
      py3-pip \
      libtool \
@@ -22,7 +22,7 @@ RUN apk -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache
 
 # Install not packaged dependencies
 WORKDIR /tmp
-RUN wget http://www-us.apache.org/dist//xerces/c/3/sources/xerces-c-$XERCES_VERSION.tar.xz -O /tmp/xerces-c-$XERCES_VERSION.tar.xz &&\
+RUN wget http://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-$XERCES_VERSION.tar.xz -O /tmp/xerces-c-$XERCES_VERSION.tar.xz &&\
 	tar xvJpf xerces-c-$XERCES_VERSION.tar.xz &&\
 	cd xerces-c-$XERCES_VERSION &&\
 	./configure &&\

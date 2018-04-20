@@ -31,7 +31,7 @@ RUN wget -t 3 http://www-us.apache.org/dist/xerces/c/3/sources/xerces-c-$XERCES_
 	cd .. &&\
 	rm -rf xerces-c-$XERCES_VERSION*
 
-RUN wget http://download.osgeo.org/proj/proj-$PROJ_VERSION.tar.gz -O /tmp/proj-$PROJ_VERSION.tar.gz &&\
+RUN wget -t 3 http://download.osgeo.org/proj/proj-$PROJ_VERSION.tar.gz -O /tmp/proj-$PROJ_VERSION.tar.gz &&\
 	tar xvzpf proj-$PROJ_VERSION.tar.gz &&\
 	cd proj-$PROJ_VERSION &&\
 	./configure &&\
@@ -41,7 +41,7 @@ RUN wget http://download.osgeo.org/proj/proj-$PROJ_VERSION.tar.gz -O /tmp/proj-$
 	rm -rf proj-$PROJ_VERSION*
 
 # Download and extract SUMO source code
-RUN wget https://github.com/DLR-TS/sumo/archive/v$SUMO_VERSION.tar.gz -O /tmp/$SUMO_VERSION.tar.gz &&\
+RUN wget -t 3 https://github.com/DLR-TS/sumo/archive/v$SUMO_VERSION.tar.gz -O /tmp/$SUMO_VERSION.tar.gz &&\
 mkdir -p $SUMO_HOME &&\
 tar xzf /tmp/$SUMO_VERSION.tar.gz -C /opt/sumo --strip 1 &&\
 rm /tmp/$SUMO_VERSION.tar.gz

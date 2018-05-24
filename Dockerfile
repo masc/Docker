@@ -15,7 +15,7 @@ RUN wget -t 3 -O /tmp/glibc-i18n.apk https://github.com/sgerrand/alpine-pkg-glib
 
 RUN apk --no-cache update &&\
     apk --no-cache upgrade &&\
-    apk -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache add ca-certificates curl wget git openssh-client gnupg perl go python3-dev freetype-dev libpng-dev hdf5-dev libxml2-dev libxslt-dev libxml++-dev libxml++-2.6-dev py3-lxml go curl graphviz /tmp/glibc.apk /tmp/glibc-bin.apk /tmp/glibc-i18n.apk musl-dev ttf-mononoki
+    apk -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --update --no-cache add ca-certificates curl wget git openssh-client gnupg perl go python3-dev freetype-dev libpng-dev hdf5-dev libxml2-dev libxslt-dev libxml++-dev libxml++-2.6-dev py3-lxml go curl graphviz /tmp/glibc.apk /tmp/glibc-bin.apk /tmp/glibc-i18n.apk musl-dev ttf-mononoki xz
 
 RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8
 

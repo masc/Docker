@@ -50,6 +50,5 @@ RUN apt-get update -qq \
 	&& rm -rf /tmp/sourcecodepro \
 	&& fc-cache -f -v \
 	&& ln -sf /bin/bash /bin/sh
-COPY Dissertation /root/
 
 ENTRYPOINT ["/bin/bash", "-l", "-c"]

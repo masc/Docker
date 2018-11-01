@@ -19,6 +19,9 @@ RUN apt-get update -qq \
 		curl \
 		fonts-mononoki \
 		libfontconfig1 \
+		fonts-texgyre \
+		fontconfig \
+		unzip \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
 # localedef -i en_US -f UTF-8 en_US.UTF-8
@@ -28,6 +31,25 @@ RUN apt-get update -qq \
 	&& tlmgr update --self --all --reinstall-forcibly-removed \
 	&& tlmgr install capt-of fncychap framed latexmk needspace tabulary titlesec varwidth wrapfig collection-fontsrecommended xindy \
 	&& rm -rf /tmp/tex \
+# fonts
+	&& mkdir -p /usr/share/fonts/truetype/FiraSans \
+	&& mkdir -p /tmp/fira \
+	&& curl -L https://github.com/bBoxType/FiraSans/archive/master.tar.gz | tar xz --strip 5 -C /tmp/fira/ FiraSans-master/Fira_Sans_4_3/Fonts/Fira_Sans_TTF_4301/Normal \
+	&& mv /tmp/fira/Roman/*.ttf /usr/share/fonts/truetype/FiraSans/ \
+	&& mv /tmp/fira/Italic/*.ttf /usr/share/fonts/truetype/FiraSans/ \
+	&& rm -rf /tmp/fira \
+	&& mkdir -p /usr/share/fonts/truetype/Charter \
+	&& wget -O /tmp/charter.zip https://practicaltypography.com/fonts/charter.zip \
+	&& unzip /tmp/charter.zip -d /tmp/ \
+	&& mv /tmp/charter/ttf/*.ttf /usr/share/fonts/truetype/Charter/ \
+	&& rm -rf /tmp/charter /tmp/charter.zip \
+	&& mkdir -p /usr/share/fonts/truetype/SourceCodePro \
+	&& mkdir -p /tmp/sourcecodepro \
+	&& curl -L https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.tar.gz | tar xz --strip 2 -C /tmp/sourcecodepro/ source-code-pro-2.030R-ro-1.050R-it/TTF/ \
+	&& mv /tmp/sourcecodepro/*.ttf /usr/share/fonts/truetype/SourceCodePro/ \
+	&& rm -rf /tmp/sourcecodepro \
+	&& fc-cache -f -v \
 	&& ln -sf /bin/bash /bin/sh
+COPY Dissertation /root/
 
 ENTRYPOINT ["/bin/bash", "-l", "-c"]

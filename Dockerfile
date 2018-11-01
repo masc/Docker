@@ -7,7 +7,7 @@ WORKDIR /root
 ENV GLIBC_VERSION 2.28-r0
 ENV TEX_SCHEME full
 ENV TEXMFHOME /root/texmf
-ENV PATH /usr/local/texlive/bin/x86_64-linux:/root/go/bin:$PATH
+ENV PATH /usr/local/texlive/bin/x86_64-linux:$PATH
 
 # --- TeX and apk package dependencies / installation section --------
 RUN wget -t 3 -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub \

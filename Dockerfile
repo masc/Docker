@@ -18,6 +18,7 @@ RUN apt-get update -qq \
 		perl \
 		curl \
 		fonts-mononoki \
+		libfontconfig1 \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
 # localedef -i en_US -f UTF-8 en_US.UTF-8
